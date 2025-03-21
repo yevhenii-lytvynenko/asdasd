@@ -1,0 +1,19 @@
+name: hello
+
+on:
+  push:
+
+jobs:
+  j1:
+    environment: main
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ var.a }}
+      - run: echo ${{ secret.b }}
+  j2:
+    environment: main
+    runs-on: ubuntu-latest
+    needs: j1
+    steps:
+      - run: echo ${{ var.a }}
+      - run: echo ${{ secret.b }}
