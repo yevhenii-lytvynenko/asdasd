@@ -8,12 +8,12 @@ jobs:
     environment: main
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ var.a }}
-      - run: echo ${{ secret.b }}
+      - run: echo ${{ vars.a }}
+      - run: echo ${{ secrets.b }}
   j2:
     environment: main
     runs-on: ubuntu-latest
     needs: j1
     steps:
-      - run: echo ${{ var.a }}
-      - run: echo ${{ secret.b }}
+      - run: echo ${{ vars.a }}
+      - run: echo ${{ secrets.b }}
