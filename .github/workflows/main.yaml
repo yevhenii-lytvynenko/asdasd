@@ -2,6 +2,7 @@ name: hello
 
 on:
   push:
+  pull_request:
 
 jobs:
   j1:
